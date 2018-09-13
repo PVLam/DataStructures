@@ -30,11 +30,14 @@ public:
 		Node <T> *n = new Node<T>;
 		n -> data = v;
 		n -> next = 0;
-		if(head == 0){
+		if(head == 0)
+		{
 			head =n;
-		}else{
+		}else
+		{
 			Node <T> * p =  head;
-			while( p -> next != 0 ){
+			while( p -> next != 0 )
+			{
 				p = p->next;
 			}
 			p->next = n;

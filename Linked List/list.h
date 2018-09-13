@@ -1,3 +1,5 @@
+#ifndef list_h
+#define list_h
 #include <iostream>
 #include "node.h"
 using namespace std;
@@ -9,13 +11,16 @@ private:
 	Node <T> * head;
 public:
 	List(): head(0){};
-	void Add(T v){
+	void Add(T v)
+	{
 		Node <T> *n = new Node<T>;
 		n -> data = v;
 		n -> next = 0;
-		if(head == 0){
+		if(head == 0)
+		{
 			head =n;
-		}else{
+		}else
+		{
 			Node <T> * p =  head;
 			while( p -> next != 0 ){
 				p = p->next;
@@ -23,24 +28,30 @@ public:
 			p->next = n;
 		}	
 	}
-	int Count()const{
+	int Count()const
+	{
 		Node <T> * p =  head;
 		int counter =0;
-		while( p -> next != 0 ){
+		while( p -> next != 0 )
+		{
 			p = p->next;
 			counter++;
 		}
 		return counter+1;	
 	}	
-	void Del(int const &pos){
-		 if(pos == 1){
+	void Del(int const &pos)
+	{
+		 if(pos == 1)
+		 {
 		 	Node <T> *q = head;
 		 	head = head -> next;
 		 	delete q;
 		 }
-		 else{
+		 else
+		 {
 		 	Node <T> *p = head;
-		 	for(int i=1; i< pos-1; i++){
+		 	for(int i=1; i< pos-1; i++)
+		 	{
 		 		p = p->next;
 		 	}
 		 	Node <T> *q = p->next;
@@ -48,19 +59,23 @@ public:
 		 	delete q;
 		 }
 	}
-	void Change(int const &pos, T const &v){
+	void Change(int const &pos, T const &v)
+	{
 		Node <T> *p = head;
-		for(int i=1; i< pos; i++){
+		for(int i=1; i< pos; i++)
+		{
 			p= p-> next;
 		}
 		p -> data = v;
 	}
 	
-	void Insert(int const &pos, T const &val){
+	void Insert(int const &pos, T const &val)
+	{
 		Node <T> *temp = new Node<T>;
 		temp -> data = val;
 		temp -> next = NULL;
-		if( pos == 1){
+		if( pos == 1)
+		{
 			Node <T> *p = head;
 			temp -> next = head;	
 			head = temp;
@@ -68,7 +83,8 @@ public:
 			return;
 		}
 		Node <T> *p = head;
-		for(int i=1; i< pos-1; i++){
+		for(int i=1; i< pos-1; i++)
+		{
 			p= p-> next;
 		}
 		temp -> next = p-> next;
@@ -79,11 +95,13 @@ public:
 	void Swap(int const &pos1, int const &pos2){
 		
 	}*/
-	int Count(T val){
+	int Count(T val)
+	{
 		int counter=0;
 		Node <T> * p = head;
 		while(p != NULL){
-			if(p-> data == val){
+			if(p-> data == val)
+			{
 				counter++;
 			}
 			p = p-> next;
@@ -100,12 +118,16 @@ public:
 		
 	}*/
 	
-	void PrintAll()const{
+	void PrintAll()const
+	{
 		Node <T> * p = head;
-		while(p != NULL){
+		while(p != NULL)
+		{
 			cout<<p-> data <<"  ";
 			p= p->next;
 		}
 		cout<<endl;
 	}
 };
+
+#endif 

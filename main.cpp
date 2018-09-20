@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
-#include "PT.h"
+#include "lib.h"
+#include <stdlib.h>
 
 int main()
 {
-	int a[10000];
-	int n = 0;
+	List<Sach> ds;
 	int c;
 	do
 	{
@@ -14,19 +14,22 @@ int main()
 		switch(c)
 		{
 			case 1:
-				Themso(a, n);
+				Themsach(ds);
 				break;
 			case 2:
-				Hienthi(a, n);
+				Hienthi(ds);
 				break;
 			case 3: 
-				Docfile(a, n);
+				Luufile(ds);
 				break;
 			case 4: 
-				Ghifile(a,n);
+				//DocFile(ds);
 				break;
 			case 5:
-				Sinhso(a,n);
+				Suasach(ds);
+				break;
+			case 6: 
+				//XuatHTML(ds);
 				break;
 			case 0:
 			{
@@ -35,5 +38,5 @@ int main()
 		}
 		system("clear");
 	}while(c!=0);
-}
 
+}

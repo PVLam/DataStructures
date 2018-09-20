@@ -22,10 +22,10 @@ public:
 	} 
 	friend istream &operator >>(istream &in, Sach &b)
 	{
-		cout<<"Ten: "; cin.ignore(); getline(in, a.Ten);
-		cout<<"Tac gia: "; cin.ignore(); getline(in, a.TG);
-		cout<<"Nam xuat ban: "; in>>a.NamXB;
-		cout<<"So trang: "; in>>a.Sotrang;
+		cout<<"Ten: "; cin.ignore(); getline(in, b.Ten);
+		cout<<"Tac gia: "; cin.ignore(); getline(in, b.TG);
+		cout<<"Nam xuat ban: "; in>>b.NamXB;
+		cout<<"So trang: "; in>>b.Sotrang;
 		return in;
 	}
 };
